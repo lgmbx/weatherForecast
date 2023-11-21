@@ -19,6 +19,13 @@ jobs:
         username: 'lgmbx'
         password: ${{secrets.DOCKER_PSA}}
           
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v5.1.0
+      with:
+        context: .
+        tags: lgmbx/wf:latest
+        push: true
           
             
 
