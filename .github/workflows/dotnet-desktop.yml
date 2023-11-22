@@ -26,7 +26,14 @@ jobs:
         context: .
         tags: lgmbx/wf:latest
         push: true
-          
-            
+
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        -name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images: https://registry.hub.docker.com/lgmbx/wf:release
+             
 
           
