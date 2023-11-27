@@ -12,6 +12,6 @@ RUN dotnet publish -c Release -o /stage-publish
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 as runtime
 WORKDIR /home/weather-forecast/runtime-publish
 COPY --from=build-env /stage-publish .
-EXPOSE 8000
+EXPOSE 80
 
 ENTRYPOINT ["dotnet", "weatherForecast.dll"]
