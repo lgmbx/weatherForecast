@@ -26,7 +26,7 @@ jobs:
       uses: docker/build-push-action@v5.1.0
       with:
         context: .
-        tags: '${{secrets.DOCKER_USER}}$/{{env.DOCKER_IMAGE_NAME}}:latest'
+        tags: '${{secrets.DOCKER_USER}}/${{env.DOCKER_IMAGE_NAME}}:latest'
         push: true
 
    
