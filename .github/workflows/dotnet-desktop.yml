@@ -29,7 +29,11 @@ jobs:
         tags: '${{secrets.DOCKER_USER}}/${{env.DOCKER_IMAGE_NAME}}:latest'
         push: true
 
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
    
-             
+           
 
           
